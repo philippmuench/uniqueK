@@ -8,9 +8,9 @@
 kmer_size=20
 
 # get kmer binary
-echo "find kmer"
-jellyfish-2.2.6/bin/jellyfish count -m $kmer_size -s 100M -C plasmid.fasta -o set_a -t 4 > /dev/null
-jellyfish-2.2.6/bin/jellyfish count -m $kmer_size -s 100M -C chromosome.fasta -o set_b -t 4 > /dev/null
+echo "calculate kmers"
+jellyfish-2.2.6/bin/jellyfish count -m $kmer_size -s 100M -C $1 -o set_a -t 4 > /dev/null
+jellyfish-2.2.6/bin/jellyfish count -m $kmer_size -s 100M -C $2 -o set_b -t 4 > /dev/null
 
 # found plasmid unique
 echo "extract set a abundant kmers"
